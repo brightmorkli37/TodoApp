@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="{% static 'todolist/styles.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Daily TODO List</span>
+        </div>
+    </nav>
+
+    <div class="card add-task">
+        <div class="card-body">
+            <h2>Tasks</h2>
+            <!-- <div class="alert alert-warning" role="alert"></div>  -->
+            <form action="{% url 'index' %}" method="post" id="todo-form">
+            {% csrf_token %}
+                <!-- <input type="text" id="todo-item" name="todo-item"> -->
+                {{my_form}}
+                <button type="submit" value="Submit" class="btn btn-dark">Add Task</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card list-task">
+        <h3>Todos</h3>
+        <ul class="list-group list-group-flush">
+          <!-- <li class="list-group-item">An item</li> -->
+         
+            {% for todo in todos %}
+            <li class="list-group-item" >{{todo.todo_item}}</li>
+            {% empty %}
+            <h3>No tasks added yet</h3>
+            {% endfor %}
+   
+        </ul>
+    </div>    
+    {% block javascript %}
+        <script src="{% static 'todolist/script.js' %}"></script>
+    {% endblock javascript %}
+</body>
+</html>

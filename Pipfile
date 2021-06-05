@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "==3.3.0"
+beautifulsoup4 = "==4.9.3"
+certifi = "==2020.6.20"
+cffi = "==1.14.4"
+pycparser = "==2.17"
+pytz = "==2020.4"
+Django = "==3.1.11"
+Pillow = "==8.2.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

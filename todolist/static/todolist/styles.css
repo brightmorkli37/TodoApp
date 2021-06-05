@@ -1,0 +1,27 @@
+body {
+    background-color: #282828;
+}
+
+.card-body {
+    background-color: cadetblue;
+}
+
+.alert-warning{
+    display: none;
+    width: 18rem;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+.add-task {
+    text-align: center;
+    margin: auto;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    width: 40em;
+}
+
+.list-task {
+    width: 40em;
+    margin: auto;
+}
